@@ -33,6 +33,9 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, db_index=True)
     image = models.ImageField(upload_to='posts', null=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Comment(models.Model):
     user_name = models.CharField(max_length=100)
